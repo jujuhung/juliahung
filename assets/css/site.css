@@ -76,7 +76,8 @@ a { color: inherit; text-decoration: none; }
   font-weight: 400; color: var(--ink);
 }
 .work-title__series {
-  margin-left: 0.45em;
+  display: block;
+  margin-top: 0.25em;
   font-size: 0.68em;
   font-style: normal;
   letter-spacing: 0;
@@ -253,8 +254,16 @@ a { color: inherit; text-decoration: none; }
 .fig img { background: var(--hover); }
 .fig--16-10 img { aspect-ratio: 16 / 10; object-fit: cover; }
 .fig--4-3   img { aspect-ratio: 4 / 3;   object-fit: cover; }
+.fig--3-2   img { aspect-ratio: 3 / 2;   object-fit: cover; }
 .fig--1-1   img { aspect-ratio: 1 / 1;   object-fit: cover; }
 .fig--3-4   img { aspect-ratio: 3 / 4;   object-fit: cover; }
+/* Preserve more of the portrait-oriented supporting photographs. */
+.bloom-gallery > .pair .fig img,
+.artificial-phenomena-gallery > .pair .fig img { aspect-ratio: 3 / 4; }
+.will-looped-gallery > .pair .fig img,
+.will-looped-gallery > .fig:not(:first-child) img { aspect-ratio: 2 / 3; }
+.inter-symbiosis-gallery .fig img { aspect-ratio: 2 / 3; }
+.untamed-gallery > .pair { width: calc(100% + 48px); }
 
 .video-embed { position: relative; aspect-ratio: 4 / 3; background: var(--hover); }
 .video-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
@@ -302,6 +311,11 @@ a { color: inherit; text-decoration: none; }
 .grid .fig img {
   width: 100%; height: auto;
   aspect-ratio: 1 / 1; object-fit: cover; object-position: center;
+}
+.grid .card--debris .fig img { object-position: center 56%; }
+.grid .card--inter-symbiosis .fig img {
+  object-fit: contain;
+  background: #c8caf0;
 }
 .grid--wide .fig img { aspect-ratio: 4 / 3; }
 .card__title { margin-top: 12px; font-size: 17px; line-height: 1.3; color: var(--ink); }
@@ -535,6 +549,7 @@ a { color: inherit; text-decoration: none; }
   .grid { gap: 28px 16px; }
   .grid .card__title { font-size: 15px; }
   .pair { grid-template-columns: 1fr; }
+  .untamed-gallery > .pair { width: 100%; }
   .fig--half { width: 100%; }
 
   /* Nav stays a line of text items at 11px — it never becomes a hamburger.
