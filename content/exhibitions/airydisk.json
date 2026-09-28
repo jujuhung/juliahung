@@ -186,5 +186,6 @@
   "link": {
     "text": "View exhibition",
     "href": "https://www.riverart.com.tw/exhibitions/19-airy-disk/"
-  }
+  },
+  "image_limit": 7
 }

@@ -2342,6 +2342,13 @@
         "height": 3000,
         "caption": "Enamelled copper wire, H90 x W61 x D12 cm, 2024",
         "parsed": {}
+      },
+      {
+        "stem": "exhibitions/airydisk/2024_airydisk_07",
+        "width": 2001,
+        "height": 3000,
+        "caption": "Enamelled copper wire, H90 x W61 x D12 cm, 2024",
+        "parsed": {}
       }
     ],
     "an-unusual-knot": [
@@ -2488,6 +2495,20 @@
         "height": 4000,
         "caption": "Mixed Medium (Used fabric, wool, used plastic bottle, paper string, enamelled copper wire, iron wire),  H79x W64x D27 cm, 2022",
         "parsed": {}
+      },
+      {
+        "stem": "exhibitions/forestry-island-eco-art-festival/2023_forestry-island-eco-art-festival_07",
+        "width": 6000,
+        "height": 4000,
+        "caption": "Mixed Media (used plastic bag, wire), H105 x W70 x D70cm, 2022",
+        "parsed": {}
+      },
+      {
+        "stem": "exhibitions/forestry-island-eco-art-festival/2023_forestry-island-eco-art-festival_08",
+        "width": 6000,
+        "height": 4000,
+        "caption": "Mixed Media (used plastic bag, wire), H105 x W70 x D70cm, 2022",
+        "parsed": {}
       }
     ],
     "in-the-mood-for-egg": [
@@ -2565,6 +2586,13 @@
       },
       {
         "stem": "exhibitions/taipeidangdai2024/2024_taipeidangdai2024_06",
+        "width": 2000,
+        "height": 3000,
+        "caption": "Mixed media, H4 x W4 x D6m, 2024",
+        "parsed": {}
+      },
+      {
+        "stem": "exhibitions/taipeidangdai2024/2024_taipeidangdai2024_07",
         "width": 2000,
         "height": 3000,
         "caption": "Mixed media, H4 x W4 x D6m, 2024",
@@ -2942,6 +2970,20 @@
         "width": 2048,
         "height": 1366,
         "caption": "Untamed 18 (Left)\nUntamed 02 (Middle)\nUntamed 10 (Right)",
+        "parsed": {}
+      },
+      {
+        "stem": "exhibitions/untamed/2023_untamed_07",
+        "width": 3543,
+        "height": 5312,
+        "caption": "Untamed 19 (Left)\nUntamed 20 (Right)",
+        "parsed": {}
+      },
+      {
+        "stem": "exhibitions/untamed/2023_untamed_08",
+        "width": 3543,
+        "height": 5147,
+        "caption": "Enamelled copper wire, Size varies, 2023",
         "parsed": {}
       }
     ],

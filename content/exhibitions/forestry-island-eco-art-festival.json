@@ -227,5 +227,6 @@
   "link": {
     "text": "View art festival",
     "href": "https://www.facebook.com/forestryisland"
-  }
+  },
+  "image_limit": 8
 }
