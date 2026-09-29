@@ -73,9 +73,9 @@ assets/js/filter.js            works and exhibitions index filters
 assets/js/contact.js           composes the contact form's mailto:
 assets/img/<kind>/<slug>/      web derivatives, 800 and 1600px, jpg + webp
 
-content/                       Wix-era records (JSON) — reference, not source
+content/                       work and exhibition records derive.py reads
 tools/                         the checks, plus derive.py for new images
-seo/                           URL map and migration notes
+seo/                           migration notes
 _archive/                      full-resolution originals (gitignored)
 ```
 
@@ -102,14 +102,15 @@ and an old typo over the fixes made since. It is in the git history if the
 templates are ever wanted for reference —
 `git log --diff-filter=D -- tools/stamp.py`.
 
-What is left in `content/` is therefore reference data, not source, with two
-exceptions `tools/derive.py` still reads: `content/selection.json` (the 20
-works, their display order and categories) and the per-record files under
-`content/works/` and `content/exhibitions/`.
+What is left in `content/` is only what `tools/derive.py` reads:
+`content/selection.json` (the 20 works, their display order and categories)
+and the per-record files under `content/works/` and `content/exhibitions/`.
+The rest of the Wix export, including the raw CMS collections, was removed;
+it is in the git history.
 
 ## Language
 
-The site is English only. `content/*.json` still carries the Chinese fields
+The site is English only. The `content/` records still carry the Chinese fields
 (`title_zh`, `statement_zh`, `text_zh`, …) from the Wix export; no page
 uses them. The press pages are the one exception, and not a translation:
 articles published in Chinese keep their own titles and summaries, because
@@ -119,10 +120,10 @@ that is what those articles are called.
 
 ```bash
 python3 tools/check_site.py     # links, header drift, Wix refs, alt text
-python3 tools/check_urls.py     # every KEEP url in seo/url-map.csv resolves
+python3 tools/relativize.py --check
 ```
 
-Run both before pushing. `check_urls.py` needs the local server running.
+Run both before pushing.
 
 ## Tools
 
@@ -132,14 +133,12 @@ None of these are needed to serve or edit the site.
 | --- | --- |
 | `derive.py` | Makes the 800/1600px jpg + webp derivatives. Needs Pillow |
 | `relativize.py` | Makes every internal path relative to its page |
-| `check_site.py`, `check_urls.py` | The checks above |
+| `check_site.py` | The check above |
 
 The migration scripts that pulled the site off Wix — `scrape.py`,
 `extract_cms.py`, `normalize.py`, `fetch_media.py` — were removed once the
 archive was complete. They are in the git history if the chain ever has to run
-again; `git log --diff-filter=D -- tools/` finds the commit. With
-`normalize.py` gone, `content/cms/` (the raw Wix collections) is read by
-nothing and is kept only as the record the normalised files came from.
+again; `git log --diff-filter=D -- tools/` finds the commit.
 
 ## Still needed from Julia
 

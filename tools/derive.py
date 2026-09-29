@@ -108,11 +108,6 @@ def main():
     shows = process("exhibitions", ex_slugs,
                     sel["max_images_exhibition"], force)
 
-    with open(os.path.join(ROOT, "content", "images.json"), "w",
-              encoding="utf-8") as f:
-        json.dump({"works": works, "exhibitions": shows}, f,
-                  ensure_ascii=False, indent=2)
-
     n = sum(len(v) for v in works.values()) + sum(len(v) for v in shows.values())
     total = sum(os.path.getsize(p)
                 for p in glob.glob(os.path.join(OUT, "**", "*.*"), recursive=True))
