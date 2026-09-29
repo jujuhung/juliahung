@@ -264,6 +264,38 @@ a { color: inherit; text-decoration: none; }
 .will-looped-gallery > .fig:not(:first-child) img { aspect-ratio: 2 / 3; }
 .inter-symbiosis-gallery .fig img { aspect-ratio: 2 / 3; }
 .untamed-gallery > .pair { width: calc(100% + 48px); }
+/* Airy Disk's two closing portraits share the left one's full 4:5 frame; the
+   taller 2:3 shot on the right loses mostly top, keeping the wire tail. */
+.airydisk-portraits .fig img { aspect-ratio: 4 / 5; }
+.airydisk-portraits .fig:last-child img { object-position: center 80%; }
+/* Untamed's closing portraits share the right one's full frame; the slightly
+   taller shot on the left gives up a sliver at the bottom to match. */
+.untamed-portraits .fig img { aspect-ratio: 3543 / 5147; }
+.untamed-portraits .fig:first-child img { object-position: center top; }
+/* Taipei Dangdai's closing pair are both 2:3 portraits; show them whole. */
+.taipeidangdai-portraits .fig img { aspect-ratio: 2 / 3; }
+/* When Night Falls' two portraits share the right one's full 4:5 frame; the
+   taller 2:3 shot on the left gives up bare floor at the bottom to match. */
+.whennightfalls-portraits .fig img { aspect-ratio: 4 / 5; }
+.whennightfalls-portraits .fig:first-child img { object-position: center top; }
+/* Artificial Phenomena's closing portraits share the left one's full 3:4
+   frame; Spun Twist (2:3) on the right loses mostly wall above the sculpture's
+   tip, with a sliver off the base so the tip stays in. */
+.artificial-phenomena-portraits .fig img { aspect-ratio: 3 / 4; }
+.artificial-phenomena-portraits .fig:last-child img { object-position: center 85%; }
+/* An Unusual Knot: Torus is cut to its neighbour's 4:3, framed on the wall
+   piece (which sits just above centre); the closing portraits stay 2:3. */
+.an-unusual-knot-wide-tall .fig:last-child img { object-position: center 40%; }
+.an-unusual-knot-portraits .fig img { aspect-ratio: 2 / 3; }
+/* A pair that stands level without cropping the art: each figure carries a
+   ratio as --ar (width / height) and grows by it, so the two share a height.
+   --ar is the photo's own ratio, or its neighbour's when a little background
+   is trimmed to even up the widths; --pos says where that trim comes from. */
+.pair--fit { display: flex; align-items: flex-start; }
+.pair--fit > .fig { flex: var(--ar) 1 0; min-width: 0; }
+.pair--fit > .fig img {
+  aspect-ratio: var(--ar); object-fit: cover; object-position: var(--pos, center);
+}
 
 .video-embed { position: relative; aspect-ratio: 4 / 3; background: var(--hover); }
 .video-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
@@ -550,6 +582,8 @@ a { color: inherit; text-decoration: none; }
   .grid .card__title { font-size: 15px; }
   .pair { grid-template-columns: 1fr; }
   .untamed-gallery > .pair { width: 100%; }
+  .pair--fit { flex-direction: column; }
+  .pair--fit > .fig { flex: none; width: 100%; }
   .fig--half { width: 100%; }
 
   /* Nav stays a line of text items at 11px — it never becomes a hamburger.

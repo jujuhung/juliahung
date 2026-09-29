@@ -196,5 +196,6 @@
   "link": {
     "text": "View exhibition",
     "href": "https://www.soka-art.com/en/exhibition/details/9399"
-  }
+  },
+  "image_limit": 8
 }

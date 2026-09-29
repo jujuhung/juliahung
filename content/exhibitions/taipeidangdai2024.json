@@ -198,5 +198,6 @@
   "link": {
     "text": "View public art project",
     "href": "https://www.facebook.com/UBSart/posts/-challenging-the-stereotypes-of-color-and-craft-with-artist-julia-hung-at-taipei/853382486830285/"
-  }
+  },
+  "image_limit": 7
 }
