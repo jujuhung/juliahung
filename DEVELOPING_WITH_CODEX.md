@@ -16,6 +16,9 @@ Return, and read what comes back; you do not need to understand it.
 
 Everything below is written for macOS only.
 
+Already set up? The one-page [`CODEX_CHEATSHEET.md`](./CODEX_CHEATSHEET.md)
+covers the daily routine.
+
 ---
 
 # Part 1 — First-time setup

@@ -6,6 +6,8 @@ dependencies, no framework. Deploys to GitHub Pages by pushing.
 For a beginner-friendly editing, preview, and publishing workflow on macOS
 using the Codex desktop app — including first-time setup of Git, Python and
 GitHub access — see [`DEVELOPING_WITH_CODEX.md`](./DEVELOPING_WITH_CODEX.md).
+For a one-page daily reference (pull, commit, push), see
+[`CODEX_CHEATSHEET.md`](./CODEX_CHEATSHEET.md).
 
 
 ## Running it
