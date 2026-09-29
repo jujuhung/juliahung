@@ -44,9 +44,9 @@ download the website until you have accepted it.
 1. If you do not have an account, sign up at
    [github.com/signup](https://github.com/signup) and verify your email.
 2. Send your GitHub username to the repository owner and ask to be added as a
-   collaborator on `Gin01234i/juliahung`.
+   collaborator on `jujuhung/juliahung`.
 3. You will get an email invitation. **Accept it** — the invitation also shows
-   up at <https://github.com/Gin01234i/juliahung/invitations>.
+   up at <https://github.com/jujuhung/juliahung/invitations>.
 
 While you wait for the invitation, carry on with the rest of the setup.
 
@@ -207,7 +207,7 @@ down from GitHub:
 
 ```bash
 cd ~/Documents
-git clone https://github.com/Gin01234i/juliahung.git
+git clone https://github.com/jujuhung/juliahung.git
 ```
 
 That creates `~/Documents/juliahung`, holding the whole website. To see it in
@@ -338,9 +338,7 @@ Before committing, ask Codex:
 The two checks that matter are `check_site.py` — internal links, shared
 navigation, old Wix references, image descriptions — and `relativize.py
 --check`, which verifies that the same site works both at the GitHub Pages
-`/juliahung/` path and at `jujuhung.com`. There is a third, `check_urls.py`,
-which needs the preview server running; ask for it when links or page addresses
-were part of the change.
+`/juliahung/` path and at `jujuhung.com`.
 
 Automated checks help, but also look at the changed pages yourself — once in a
 wide desktop window, once in a narrow phone-sized one.
@@ -380,7 +378,7 @@ force-push as a quick fix; both can destroy other people's work.
 GitHub Pages takes a short while to deploy. Open the repository's **Actions**
 tab on GitHub and wait for the Pages workflow to turn green. Then review:
 
-<https://gin01234i.github.io/juliahung/>
+<https://jujuhung.github.io/juliahung/>
 
 Use a private browser window, or force-refresh with **Command-Shift-R**, if an
 old stylesheet or image is cached. A successful push only proves that the
@@ -424,7 +422,6 @@ knowing them makes its summaries easier to read.
 python3 -m http.server 8000        # the local preview at localhost:8000
 python3 tools/check_site.py        # links, header drift, Wix refs, alt text
 python3 tools/relativize.py --check  # paths work at /juliahung/ and at the domain
-python3 tools/check_urls.py        # every kept URL resolves (needs the server)
 
 git pull --ff-only origin main     # bring down other people's changes
 git status                         # what has changed locally
