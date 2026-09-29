@@ -64,8 +64,8 @@ about/  news/  contact/        About + CV, News, Contact
 blog/                          Press index
 post/<slug>/                   3 press pages (URLs kept from Wix); the other
                                15 entries link straight to the publisher
-commission/                    Commission guide — unlisted, noindex
 404.html  robots.txt  sitemap.xml
+favicon.png  favicon.ico  apple-touch-icon.png
 
 assets/css/site.css            the stylesheet — the spec, in one file
 assets/css/stage.css           the Stage home only; loaded by nothing else
@@ -132,7 +132,6 @@ None of these are needed to serve or edit the site.
 | --- | --- |
 | `derive.py` | Makes the 800/1600px jpg + webp derivatives. Needs Pillow |
 | `relativize.py` | Makes every internal path relative to its page |
-| `gen_redirects.py` | Writes `_redirects` from `seo/url-map.csv`. Only useful if the site ends up behind Cloudflare or on Netlify — GitHub Pages ignores the file |
 | `check_site.py`, `check_urls.py` | The checks above |
 
 The migration scripts that pulled the site off Wix — `scrape.py`,
@@ -152,7 +151,12 @@ nothing and is kept only as the record the normalised files came from.
 
 ## Not done here
 
-The domain still points at Wix. Cutover, DNS and the 43 redirects are tracked
-in [`seo/wix-to-github-pages-migration.md`](./seo/wix-to-github-pages-migration.md).
+The domain still points at Wix. Cutover and DNS are tracked in
+[`seo/wix-to-github-pages-migration.md`](./seo/wix-to-github-pages-migration.md).
+
+The site ships on plain GitHub Pages with no server-side redirects: retired
+Wix URLs return 404. `404.html` forwards visitors on the known old paths
+(`/artwork/*`, `/exhibition/*`, `/post/*` and a few one-offs) with
+JavaScript — that helps people on old links, not search rankings.
 **Do not cancel the Wix plan** before that is finished — though the images are
 already safe: all 333 originals are archived locally at full resolution.

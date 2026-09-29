@@ -1,5 +1,10 @@
 # Wix → GitHub Pages Migration: jujuhung.com
 
+> **Decision, 2026-09-29:** plain GitHub Pages, no Cloudflare, no 301s. The
+> redirect plan below is kept as history; `_redirects` and
+> `tools/gen_redirects.py` were deleted. Old Wix URLs 404, and `404.html`
+> forwards visitors on known old paths with JavaScript.
+
 Working notes from a session on 2026-09-17. Site crawled live; findings below are
 from the actual site, not assumptions.
 
