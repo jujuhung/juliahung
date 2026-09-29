@@ -22,10 +22,46 @@
 (function () {
   var m = location.hostname.slice(-10) === ".github.io" &&
           location.pathname.match(/^\/[^\/]+\//);
-  document.write('<base href="' + (m ? m[0] : "/") + '">');
+  var root = m ? m[0] : "/";
+
+  // Old Wix URLs. GitHub Pages cannot send a 301, so forward visitors on
+  // old links from here instead. Search engines drop the old URLs on their
+  // own; this is for people following links in press and bios.
+  var path = location.pathname.slice(root.length - 1).replace(/\/+$/, "");
+  try { path = decodeURIComponent(path); } catch (e) {}
+  var moved = {
+    "/artwork": "artworks/",
+    "/artwork/-inter-symbiosis": "artworks/inter-symbiosis/",
+    "/artwork/lost-and-found": "exhibitions/the-miscellaneous-of-being-and-living/",
+    "/artwork/wonders-and-wonderers": "artworks/",
+    "/copy-of-artworks-1": "artworks/",
+    "/exhibition": "exhibitions/",
+    "/exhibition/in-the-mood-for-egg-": "exhibitions/in-the-mood-for-egg/",
+    "/exhibition/未央夜": "exhibitions/whennightfalls/",
+    "/essence": "artworks/essence/",
+    "/infinite": "artworks/infinite/",
+    "/副本-infinite": "artworks/infinite/",
+    "/portfolio": "artworks/",
+    "/porfoliotodate": "artworks/",
+    "/single-project": "artworks/",
+    "/color-of-water": "artworks/",
+    "/price-list": "contact/",
+    "/blog-feed.xml": "blog/"
+  };
+  var to = moved[path], s;
+  if (!to && (s = path.match(/^\/(artwork|exhibition)\/([^\/]+)$/)))
+    to = s[1] + "s/" + s[2] + "/";
+  // Only 3 of the 18 Wix posts were rebuilt; the rest are listed on /blog/.
+  else if (!to && /^\/post\/[^\/]+$/.test(path))
+    to = "blog/";
+  if (to) { location.replace(root + to); return; }
+
+  document.write('<base href="' + root + '">');
 })();
 </script>
 <link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
 <div class="page">
